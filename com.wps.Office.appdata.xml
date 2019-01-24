@@ -14,6 +14,7 @@
     <p>NOTE: This wrapper is not verified by, affiliated with, or
     supported by Kingsoft Office Corporation</p>
   </description>
+  <icon type="remote">https://d2.alternativeto.net/dist/icons/wps-office_50636.png?width=128&amp;height=128</icon>
   <url type="homepage">https://www.wps.com/linux</url>
   <url type="bugtracker">http://community.wps.cn/bug/login_page.php</url>
   <url type="donation">http://wps-community.org/donate</url>
@@ -54,6 +55,17 @@
     </release>
     <release version="10.1.0.5707~a21" date="2017-06-15"/>
   </releases>
+  <screenshots>
+    <screenshot type="default">
+      <image>https://www.wps.com/images/wps4linux/Women_in_Dance_SpellCheck.png</image>
+  </screenshot>
+    <screenshot>
+      <image>https://www.wps.com/images/wps4linux/Presentation_Slide2.png</image>
+  </screenshot>
+    <screenshot>
+      <image>https://www.wps.com/images/wps4linux/Spreadsheets_Screenshot_Arial.png</image>
+    </screenshot>
+  </screenshots>
   <content_rating type="oars-1.1">
     <content_attribute id="violence-cartoon">none</content_attribute>
     <content_attribute id="violence-fantasy">none</content_attribute>
