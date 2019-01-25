@@ -11,10 +11,10 @@ rm export/share/applications/appurl.desktop
 for f in export/share/{icons/hicolor/*/*,applications,mime/packages}/wps-office-*.*; do
     mv "$f" "${f/wps-office-/com.wps.Office.}";
 done
-sed -i 's|/opt/kingsoft/wps-office|/app/extra/wps-office|g' -i wps-office/{wps,wpp,et}
-sed -i 's|Exec=/usr/bin/|Exec=|g' -i export/share/applications/com.wps.Office.*.desktop
-sed -i 's/Icon=wps-office-/Icon=com.wps.Office./' export/share/applications/com.wps.Office.*.desktop
 for a in wps wpp et; do
+    sed -i "s|/opt/kingsoft/wps-office|/app/extra/wps-office|g" -i wps-office/$a
+    sed -i "s|Exec=/usr/bin/|Exec=|g" -i export/share/applications/com.wps.Office.$a.desktop
+    sed -i "s|Icon=wps-office-|Icon=com.wps.Office.|g" export/share/applications/com.wps.Office.$a.desktop
     echo "X-Flatpak-RenamedFrom=wps-office-$a.desktop;" >> export/share/applications/com.wps.Office.$a.desktop
 done
 sed -i 's/generic-icon name="wps-office-/icon name="com.wps.Office./g' export/share/mime/packages/com.wps.Office.*.xml
