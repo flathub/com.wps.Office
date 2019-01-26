@@ -21,4 +21,13 @@ for l in /app/share/wps/office6/mui/*; do
     test -d wps-office/office6/mui/$d || ln -sr /app/share/wps/office6/mui/$d wps-office/office6/mui/$d
 done
 
-rm wps.tar.xz
+dicts_dir=wps-office/office6/dicts/spellcheck
+for dict in *.dict.zip; do
+    lang=${dict/.dict.zip/}
+    if [ ! -d "$dicts_dir/$lang" ]; then
+        #FIXME avoid removing all paths
+        unzip -j -q "$dict" -d "$dicts_dir/$lang"
+    fi
+done
+
+rm wps.tar.xz *.dict.zip

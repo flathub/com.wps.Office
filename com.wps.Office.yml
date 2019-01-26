@@ -78,3 +78,5 @@ modules:
         url: http://kdl.cc.ksosoft.com/wps-community/download/6757/wps-office_10.1.0.6757_x86.tar.xz
         sha256: d291a63ae39e6ac5d4569db3ab58e9888ddab116f000c406f174bc7fccb86985
         size: 134095644
+
+      - dicts-sources.json
