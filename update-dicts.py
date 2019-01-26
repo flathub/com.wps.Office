@@ -14,14 +14,12 @@ dicts_sources = []
 for lang in langs:
     print(lang)
 
-    zip_file_name = f"{lang}.zip"
-    zip_file_url = f"{BASE_URL}/{zip_file_name}"
+    zip_file_url = f"{BASE_URL}/{lang}.zip"
     zip_file = urlopen(zip_file_url)
 
     dicts_sources.append(OrderedDict({
         "type": "extra-data",
-        "dest": "dicts",
-        "filename": zip_file_name,
+        "filename": f"{lang}.dict.zip",
         "url": zip_file_url,
         "size": zip_file.length,
         "sha256": sha256(zip_file.read()).hexdigest()
