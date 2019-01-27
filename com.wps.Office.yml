@@ -56,6 +56,12 @@ modules:
       - ln -s ../extra/wps-office/et /app/bin/et
       - ln -s ../extra/wps-office/wpp /app/bin/wpp
       - install -Dm644 ${FLATPAK_ID}.appdata.xml -t /app/share/appdata/
+      - |
+        dicts_dir=/app/share/wps/office6/dicts/spellcheck
+        mkdir -p $dicts_dir
+        for d in dicts/*; do
+          cp -a $d $dicts_dir/
+        done
     sources:
       - type: file
         path: apply_extra.sh

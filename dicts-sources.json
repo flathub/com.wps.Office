@@ -1,16 +1,14 @@
 [
     {
-        "type": "extra-data",
-        "filename": "ca_ES.dict.zip",
+        "type": "archive",
+        "dest": "dicts/ca_ES",
         "url": "http://wps-community.org/download/dicts/ca_ES.zip",
-        "size": 349458,
         "sha256": "25f69de48b8f1560849cd6059bb683753a75d0c26bf897f98a18aeb67b1d57c6"
     },
     {
-        "type": "extra-data",
-        "filename": "cs_CZ.dict.zip",
+        "type": "archive",
+        "dest": "dicts/cs_CZ",
         "url": "http://wps-community.org/download/dicts/cs_CZ.zip",
-        "size": 898043,
         "sha256": "508da7f75cbb0d9ed68b985ef6af29cd4cda0f3022c7eb2ed52b1f4e2545e298"
     },
     {
@@ -21,10 +19,9 @@
         "sha256": "ebee9f3529be6d8e3eed986b6ee2273129291a56235aa78afda33272a17a34e4"
     },
     {
-        "type": "extra-data",
-        "filename": "el_GR.dict.zip",
+        "type": "archive",
+        "dest": "dicts/el_GR",
         "url": "http://wps-community.org/download/dicts/el_GR.zip",
-        "size": 3405537,
         "sha256": "1df9e3c78d921d1f715d1b860f0b6c1611b7e797727bb4b55a40c249f5f7ab2d"
     },
     {
@@ -35,17 +32,15 @@
         "sha256": "a0ff2646dd1347f7c66542644b498dd47e6cb2549d28ca40faff74d94960a600"
     },
     {
-        "type": "extra-data",
-        "filename": "en_US.dict.zip",
+        "type": "archive",
+        "dest": "dicts/en_US",
         "url": "http://wps-community.org/download/dicts/en_US.zip",
-        "size": 175804,
         "sha256": "6aecd8f6da7d69203f9457cb6b8757b8731b07ccd46bdb1f8edbe1cbfb1dfef7"
     },
     {
-        "type": "extra-data",
-        "filename": "es_ES.dict.zip",
+        "type": "archive",
+        "dest": "dicts/es_ES",
         "url": "http://wps-community.org/download/dicts/es_ES.zip",
-        "size": 273924,
         "sha256": "94d179f58cb916ed0960e6b7c9c97b35dd1dc91515d445f1840e9e9a347f9b9d"
     },
     {
@@ -56,10 +51,9 @@
         "sha256": "a8280881e8dfa53e50af3706d7239cbde582d9f3241b6b86c87fd76aace65c90"
     },
     {
-        "type": "extra-data",
-        "filename": "hr_HR.dict.zip",
+        "type": "archive",
+        "dest": "dicts/hr_HR",
         "url": "http://wps-community.org/download/dicts/hr_HR.zip",
-        "size": 1153305,
         "sha256": "4de12f2f085346f3a176ef72157a3cfdc1c123c56543e76e32d38d9640179be9"
     },
     {
@@ -77,10 +71,9 @@
         "sha256": "c0246a0cc884468659424da0add925f656d7300dda3d6c1fb377aa7b022ba6ec"
     },
     {
-        "type": "extra-data",
-        "filename": "lt_LT.dict.zip",
+        "type": "archive",
+        "dest": "dicts/lt_LT",
         "url": "http://wps-community.org/download/dicts/lt_LT.zip",
-        "size": 345728,
         "sha256": "e63bb925685e7c84eddde08afd908f8bdec8ae65d9f6af4f079b226c4de43a67"
     },
     {
@@ -91,10 +84,9 @@
         "sha256": "b6426849bb040b3784e023f2ea8774751f4e5fda197e931ae9390be6f0c515c1"
     },
     {
-        "type": "extra-data",
-        "filename": "pl_PL.dict.zip",
+        "type": "archive",
+        "dest": "dicts/pl_PL",
         "url": "http://wps-community.org/download/dicts/pl_PL.zip",
-        "size": 2068424,
         "sha256": "5cf948bc2e9a455299a48dd0e3c9c5407f02c0df7c0f7a61c1c352849827966d"
     },
     {
@@ -105,10 +97,9 @@
         "sha256": "e65a4cb9cdb7caa59a99a385bd170382b89982bd67e40fb394337a43262f8a91"
     },
     {
-        "type": "extra-data",
-        "filename": "pt_PT.dict.zip",
+        "type": "archive",
+        "dest": "dicts/pt_PT",
         "url": "http://wps-community.org/download/dicts/pt_PT.zip",
-        "size": 256203,
         "sha256": "c46195acaf8c63f6c52c84b09d999b094bd6a984d4fd70aefa7318a4fd59c0f0"
     },
     {
@@ -126,10 +117,9 @@
         "sha256": "33c2941bc5edabd467ec86ba1004b7c2218c66b5e70e6bb1fa9c6c9980afa119"
     },
     {
-        "type": "extra-data",
-        "filename": "sk_SK.dict.zip",
+        "type": "archive",
+        "dest": "dicts/sk_SK",
         "url": "http://wps-community.org/download/dicts/sk_SK.zip",
-        "size": 750750,
         "sha256": "65da18c14a2d6a6426974849cba8d21671492690cbaea295690d65d03388b251"
     },
     {
