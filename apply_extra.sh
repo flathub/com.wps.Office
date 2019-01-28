@@ -8,12 +8,15 @@ tar -xJf wps.tar.xz --strip-components=1 -C wps-office
 cp -ax wps-office/resource/{icons,applications,mime} export/share/
 rm export/share/applications/appurl.desktop
 
-for f in export/share/{icons/hicolor/*/*,applications,mime/packages}/wps-office-*.*; do
-    mv "$f" "${f/wps-office-/com.wps.Office.}";
+rename "wps-office-" "com.wps.Office." export/share/{icons/hicolor/*/*,applications,mime/packages}/wps-office-*.*
+
+for a in wps wpp et; do
+    sed -i "s|/opt/kingsoft/wps-office|/app/extra/wps-office|g" -i wps-office/$a
+    desktop_file="export/share/applications/com.wps.Office.$a.desktop"
+    desktop-file-edit --set-key="Exec" --set-value="$a" "$desktop_file"
+    desktop-file-edit --set-key="Icon" --set-value="com.wps.Office.$a" "$desktop_file"
+    desktop-file-edit --set-key="X-Flatpak-RenamedFrom" --set-value="wps-office-$a.desktop;" "$desktop_file"
 done
-sed -i 's|/opt/kingsoft/wps-office|/app/extra/wps-office|g' -i wps-office/{wps,wpp,et}
-sed -i 's|Exec=/usr/bin/|Exec=|g' -i export/share/applications/com.wps.Office.*.desktop
-sed -i 's/Icon=wps-office-/Icon=com.wps.Office./' export/share/applications/com.wps.Office.*.desktop
 sed -i 's/generic-icon name="wps-office-/icon name="com.wps.Office./g' export/share/mime/packages/com.wps.Office.*.xml
 
 for l in /app/share/wps/office6/mui/*; do
