@@ -8,9 +8,8 @@ tar -xJf wps.tar.xz --strip-components=1 -C wps-office
 cp -ax wps-office/resource/{icons,applications,mime} export/share/
 rm export/share/applications/appurl.desktop
 
-for f in export/share/{icons/hicolor/*/*,applications,mime/packages}/wps-office-*.*; do
-    mv "$f" "${f/wps-office-/com.wps.Office.}";
-done
+rename "wps-office-" "com.wps.Office." export/share/{icons/hicolor/*/*,applications,mime/packages}/wps-office-*.*
+
 for a in wps wpp et; do
     sed -i "s|/opt/kingsoft/wps-office|/app/extra/wps-office|g" -i wps-office/$a
     desktop_file="export/share/applications/com.wps.Office.$a.desktop"
