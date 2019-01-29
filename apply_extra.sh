@@ -14,7 +14,7 @@ for a in wps wpp et; do
     sed -i "s|/opt/kingsoft/wps-office|/app/extra/wps-office|g" -i wps-office/$a
     desktop_file="export/share/applications/com.wps.Office.$a.desktop"
     desktop-file-edit --set-key="Exec" --set-value="$a" "$desktop_file"
-    desktop-file-edit --set-key="Icon" --set-value="com.wps.Office.$a" "$desktop_file"
+    desktop-file-edit --set-key="Icon" --set-value="com.wps.Office.${a}main" "$desktop_file"
     desktop-file-edit --set-key="X-Flatpak-RenamedFrom" --set-value="wps-office-$a.desktop;" "$desktop_file"
 done
 sed -i 's/generic-icon name="wps-office-/icon name="com.wps.Office./g' export/share/mime/packages/com.wps.Office.*.xml
