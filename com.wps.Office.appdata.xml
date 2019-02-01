@@ -24,6 +24,9 @@
   <developer_name>Kingsoft Office Corporation</developer_name>
   <update_contact>wps_linux_at_kingsoft.com</update_contact>
   ​<launchable type="desktop-id">com.wps.Office.wps.desktop</launchable>
+  <categories>
+    <category>Office</category>
+  </categories>
   <releases>
     <release version="10.1.0.6757" date="2018-09-11">
       <ul>
@@ -120,6 +123,10 @@
   <url type="translate">https://github.com/wps-community/wps_i18n</url>
   <developer_name>Kingsoft Office Corporation</developer_name>
   <update_contact>wps_linux_at_kingsoft.com</update_contact>
+  <categories>
+    <category>Office</category>
+    <category>WordProcessor</category>
+  </categories>
   <content_rating type="oars-1.1">
     <content_attribute id="violence-cartoon">none</content_attribute>
     <content_attribute id="violence-fantasy">none</content_attribute>
@@ -173,6 +180,10 @@
   <url type="translate">https://github.com/wps-community/wps_i18n</url>
   <developer_name>Kingsoft Office Corporation</developer_name>
   <update_contact>wps_linux_at_kingsoft.com</update_contact>
+  <categories>
+    <category>Office</category>
+    <category>Spreadsheet</category>
+  </categories>
   <content_rating type="oars-1.1">
     <content_attribute id="violence-cartoon">none</content_attribute>
     <content_attribute id="violence-fantasy">none</content_attribute>
@@ -226,6 +237,10 @@
   <url type="translate">https://github.com/wps-community/wps_i18n</url>
   <developer_name>Kingsoft Office Corporation</developer_name>
   <update_contact>wps_linux_at_kingsoft.com</update_contact>
+  <categories>
+    <category>Office</category>
+    <category>Presentation</category>
+  </categories>
   <content_rating type="oars-1.1">
     <content_attribute id="violence-cartoon">none</content_attribute>
     <content_attribute id="violence-fantasy">none</content_attribute>
