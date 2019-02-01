@@ -16,6 +16,8 @@ finish-args:
   - --device=dri
   - --filesystem=xdg-documents
   - --filesystem=xdg-download
+  - --filesystem=xdg-pictures
+  - --filesystem=xdg-videos
   - --filesystem=/run/media
   - --filesystem=/media
 cleanup:
