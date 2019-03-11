@@ -73,7 +73,7 @@ modules:
         only-arches:
           - 'x86_64'
         url: http://kdl.cc.ksosoft.com/wps-community/download/6758/wps-office_10.1.0.6758_x86_64.tar.xz
-        sha256: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+        sha256: f941ffd7cf9066c31f0d35f2b71cb62fa600da6502b50da5efde807a34f25abb
         size: 131332480
 
       - type: extra-data
@@ -81,5 +81,5 @@ modules:
         only-arches:
           - 'i386'
         url: http://kdl.cc.ksosoft.com/wps-community/download/6758/wps-office_10.1.0.6758_x86.tar.xz
-        sha256: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+        sha256: 492f1f883c36310eb2694681d904daab7096ee8e7260a91e92d16ef62f24e8da
         size: 134090056
