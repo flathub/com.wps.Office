@@ -72,14 +72,14 @@ modules:
         filename: wps.tar.xz
         only-arches:
           - 'x86_64'
-        url: http://kdl.cc.ksosoft.com/wps-community/download/6757/wps-office_10.1.0.6757_x86_64.tar.xz
-        sha256: 0280d3e5a3b0c524f54076db6a904a6fee68b19075f6b879b5d2473622d4627e
-        size: 131336404
+        url: http://kdl.cc.ksosoft.com/wps-community/download/6758/wps-office_10.1.0.6758_x86_64.tar.xz
+        sha256: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+        size: 131332480
 
       - type: extra-data
         filename: wps.tar.xz
         only-arches:
           - 'i386'
-        url: http://kdl.cc.ksosoft.com/wps-community/download/6757/wps-office_10.1.0.6757_x86.tar.xz
-        sha256: d291a63ae39e6ac5d4569db3ab58e9888ddab116f000c406f174bc7fccb86985
-        size: 134095644
+        url: http://kdl.cc.ksosoft.com/wps-community/download/6758/wps-office_10.1.0.6758_x86.tar.xz
+        sha256: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+        size: 134090056
