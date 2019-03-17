@@ -24,8 +24,8 @@ desktop-file-edit --set-key="Exec" --set-value="parsecloudfiletool %u" "$appurl_
 sed -i 's/generic-icon name="wps-office-/icon name="com.wps.Office./g' export/share/mime/packages/com.wps.Office.*.xml
 
 for l in /app/share/wps/office6/mui/*; do
-    d=$(basename $l)
-    test -d wps-office/office6/mui/$d || ln -sr /app/share/wps/office6/mui/$d wps-office/office6/mui/$d
+    d=$(basename "$l")
+    test -d "wps-office/office6/mui/$d" || ln -sr "$l" "wps-office/office6/mui/$d"
 done
 
 rm wps.tar.xz
