@@ -14,6 +14,7 @@ finish-args:
   - --socket=pulseaudio
   - --share=network
   - --device=dri
+  - --persist=.kingsoft
   - --filesystem=xdg-documents
   - --filesystem=xdg-download
   - --filesystem=xdg-pictures
