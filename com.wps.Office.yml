@@ -32,6 +32,8 @@ cleanup:
   - /lib/qt4
   - /share/qt4
 modules:
+  - shared-modules/gtk2/gtk2.json
+
   - shared-modules/qt4/qt4-4.8.7-minimal.json
 
   - shared-modules/glu/glu-9.0.0.json
