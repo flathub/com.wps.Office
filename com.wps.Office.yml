@@ -15,6 +15,7 @@ finish-args:
   - --share=network
   - --device=dri
   - --persist=.kingsoft
+  - --env=TMPDIR=/var/tmp
   - --filesystem=xdg-documents
   - --filesystem=xdg-download
   - --filesystem=xdg-pictures
