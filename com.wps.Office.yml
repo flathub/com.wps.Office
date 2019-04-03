@@ -32,6 +32,8 @@ cleanup:
   - /lib/qt4
   - /share/qt4
 modules:
+  - shared-modules/gtk2/gtk2.json
+
   - shared-modules/qt4/qt4-4.8.7-minimal.json
 
   - shared-modules/glu/glu-9.0.0.json
@@ -44,7 +46,7 @@ modules:
       - DESTDIR=/app/share/wps/office6
     sources:
       - type: git
-        url: https://github.com/wps-community/wps_i18n.git
+        url: "https://github.com/wps-community/wps_i18n.git"
         commit: 39da55042512a19abb6a73b33c0da626c6e470ce
 
       - type: patch
@@ -57,11 +59,13 @@ modules:
     buildsystem: simple
     build-commands:
       - install -Dm755 apply_extra.sh /app/bin/apply_extra
-      - ln -s ../extra/wps-office/wps /app/bin/wps
-      - ln -s ../extra/wps-office/et /app/bin/et
-      - ln -s ../extra/wps-office/wpp /app/bin/wpp
+      - install -Dm755 wps.sh /app/bin/wps
+      - ln -s wps /app/bin/et
+      - ln -s wps /app/bin/wpp
       - install -Dm644 ${FLATPAK_ID}.appdata.xml -t /app/share/appdata/
       - install -Dm755 /usr/bin/desktop-file-edit -t /app/bin/
+      - install -Dm755 /usr/bin/ar -t /app/bin/
+      - install -Dm755 /usr/lib/$(gcc -print-multiarch)/libbfd-*.so -t /app/lib/
     sources:
       - type: file
         path: apply_extra.sh
@@ -69,18 +73,23 @@ modules:
       - type: file
         path: com.wps.Office.appdata.xml
 
-      - type: extra-data
-        filename: wps.tar.xz
-        only-arches:
-          - 'x86_64'
-        url: http://kdl.cc.ksosoft.com/wps-community/download/6758/wps-office_10.1.0.6758_x86_64.tar.xz
-        sha256: f941ffd7cf9066c31f0d35f2b71cb62fa600da6502b50da5efde807a34f25abb
-        size: 131332480
+      - type: script
+        dest-filename: wps.sh
+        commands:
+          - exec /app/extra/wps-office/$(basename $0) "$@"
 
       - type: extra-data
-        filename: wps.tar.xz
+        filename: wps-office.deb
+        only-arches:
+          - 'x86_64'
+        url: "http://kdl.cc.ksosoft.com/wps-community/download/8372/wps-office_11.1.0.8372_amd64.deb"
+        sha256: 596caf33d0fcba42828cbe3d6a71137ca6c1dd6f7e096e394a7693cc6f030c54
+        size: 213018066
+
+      - type: extra-data
+        filename: wps-office.deb
         only-arches:
           - 'i386'
-        url: http://kdl.cc.ksosoft.com/wps-community/download/6758/wps-office_10.1.0.6758_x86.tar.xz
-        sha256: 492f1f883c36310eb2694681d904daab7096ee8e7260a91e92d16ef62f24e8da
-        size: 134090056
+        url: "http://kdl.cc.ksosoft.com/wps-community/download/8372/wps-office_11.1.0.8372_i386.deb"
+        sha256: 1eceb0cd1807f5fe17546fa9ac0399c25d831dc3696a7c52372fc78f2dd4aa41
+        size: 216082588

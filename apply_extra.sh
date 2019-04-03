@@ -1,17 +1,18 @@
 #!/bin/bash
 set -e
 
-mkdir -p wps-office export/share
+mkdir -p deb-package export/share
 
-tar -xJf wps.tar.xz --strip-components=1 -C wps-office
+ar p wps-office.deb data.tar.xz | tar -xJf - -C deb-package
 
-cp -ax wps-office/resource/{icons,applications,mime} export/share/
+mv deb-package/opt/kingsoft/wps-office .
+mv deb-package/usr/bin/{wps,wpp,et} wps-office/
+mv deb-package/usr/share/{icons,applications,mime} export/share/
 rm export/share/applications/appurl.desktop
 
 rename "wps-office-" "com.wps.Office." export/share/{icons/hicolor/*/*,applications,mime/packages}/wps-office-*.*
 
 for a in wps wpp et; do
-    sed -i "s|/opt/kingsoft/wps-office|/app/extra/wps-office|g" -i wps-office/$a
     desktop_file="export/share/applications/com.wps.Office.$a.desktop"
     desktop-file-edit --set-key="Exec" --set-value="$a %f" "$desktop_file"
     desktop-file-edit --set-key="Icon" --set-value="com.wps.Office.${a}main" "$desktop_file"
@@ -24,4 +25,4 @@ for l in /app/share/wps/office6/mui/*; do
     test -d wps-office/office6/mui/$d || ln -sr /app/share/wps/office6/mui/$d wps-office/office6/mui/$d
 done
 
-rm wps.tar.xz
+rm -r wps-office.deb deb-package
