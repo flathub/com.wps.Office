@@ -85,7 +85,7 @@ modules:
         filename: wps-office.deb
         only-arches:
           - 'x86_64'
-        url: "http://kdl.cc.ksosoft.com/wps-community/download/8372/wps-office_11.1.0.8392_amd64.deb"
+        url: "http://kdl.cc.ksosoft.com/wps-community/download/8392/wps-office_11.1.0.8392_amd64.deb"
         sha256: ef7569493819cfc44e1623cfc87010d5ef565ac43c16a4cd1095c05b50b77c2f
         size: 213113086
 
@@ -93,6 +93,6 @@ modules:
         filename: wps-office.deb
         only-arches:
           - 'i386'
-        url: "http://kdl.cc.ksosoft.com/wps-community/download/8372/wps-office_11.1.0.8392_i386.deb"
+        url: "http://kdl.cc.ksosoft.com/wps-community/download/8392/wps-office_11.1.0.8392_i386.deb"
         sha256: 54494cbfd48a5c468573f5630582747a318408480bf44a55ddc2d261fa27d5f4
         size: 216166080
