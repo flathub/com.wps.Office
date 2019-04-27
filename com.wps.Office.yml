@@ -50,7 +50,7 @@ modules:
     sources:
       - type: git
         url: "https://github.com/wps-community/wps_i18n.git"
-        commit: 39da55042512a19abb6a73b33c0da626c6e470ce
+        commit: 14b3393e1aeba1015d9613970fa22ab2a2534970
 
       - type: patch
         path: wps-i18n-fix-tags.patch
