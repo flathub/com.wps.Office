@@ -14,7 +14,7 @@ finish-args:
   - --socket=pulseaudio
   - --share=network
   - --device=dri
-  - --persist=.kingsoft
+  - --filesystem=~/.local/share/Kingsoft:create
   - --env=TMPDIR=/var/tmp
   - --filesystem=xdg-documents
   - --filesystem=xdg-download
