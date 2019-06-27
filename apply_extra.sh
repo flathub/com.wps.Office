@@ -12,7 +12,7 @@ rm export/share/applications/appurl.desktop
 
 rename "wps-office-" "com.wps.Office." export/share/{icons/hicolor/*/*,applications,mime/packages}/wps-office-*.*
 
-ooxml_mime="application/vnd.ooxmlformats-officedocument"
+ooxml_mime="application/vnd.openxmlformats-officedocument"
 extra_mime_types_wps=(
     "${ooxml_mime}.wordprocessingml.document"
     "${ooxml_mime}.wordprocessingml.template"
