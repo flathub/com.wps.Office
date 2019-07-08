@@ -1,45 +1,30 @@
 #!/bin/bash
 set -e
+shopt -s failglob
 
 mkdir -p deb-package export/share
 
 ar p wps-office.deb data.tar.xz | tar -xJf - -C deb-package
 
 mv deb-package/opt/kingsoft/wps-office .
-mv deb-package/usr/bin/{wps,wpp,et} wps-office/
+mv deb-package/usr/bin/{wps,wpp,et,wpspdf} wps-office/
 mv deb-package/usr/share/{icons,applications,mime} export/share/
 rm export/share/applications/appurl.desktop
 
+YEAR_SUFFIX=2019
+
 rename "wps-office-" "com.wps.Office." export/share/{icons/hicolor/*/*,applications,mime/packages}/wps-office-*.*
+rename "wps-office${YEAR_SUFFIX}" "com.wps.Office.${YEAR_SUFFIX}" export/share/icons/hicolor/*/*/wps-office${YEAR_SUFFIX}-*.*
 
-ooxml_mime="application/vnd.openxmlformats-officedocument"
-extra_mime_types_wps=(
-    "${ooxml_mime}.wordprocessingml.document"
-    "${ooxml_mime}.wordprocessingml.template"
-)
-extra_mime_types_wpp=(
-    "${ooxml_mime}.presentationml.presentation"
-    "${ooxml_mime}.presentationml.slideshow"
-    "${ooxml_mime}.presentationml.template"
-)
-extra_mime_types_et=(
-    "${ooxml_mime}.spreadsheetml.sheet"
-    "${ooxml_mime}.spreadsheetml.template"
-)
-declare -A extra_mime_types=(
-    [wps]=${extra_mime_types_wps[@]}
-    [wpp]=${extra_mime_types_wpp[@]}
-    [et]=${extra_mime_types_et[@]}
-)
-
-for a in wps wpp et; do
+for a in wps wpp et pdf; do
     desktop_file="export/share/applications/com.wps.Office.$a.desktop"
-    desktop-file-edit --set-key="Exec" --set-value="$a %f" "$desktop_file"
-    desktop-file-edit --set-key="Icon" --set-value="com.wps.Office.${a}main" "$desktop_file"
+    case "$a" in
+        pdf) appbin=wpspdf ;;
+        *) appbin="$a" ;;
+    esac
+    desktop-file-edit --set-key="Exec" --set-value="$appbin %f" "$desktop_file"
+    desktop-file-edit --set-key="Icon" --set-value="com.wps.Office.${YEAR_SUFFIX}-${a}main" "$desktop_file"
     desktop-file-edit --set-key="X-Flatpak-RenamedFrom" --set-value="wps-office-$a.desktop;" "$desktop_file"
-    for extra_mime_type in ${extra_mime_types[$a]}; do
-        desktop-file-edit --add-mime-type="${extra_mime_type}" "$desktop_file"
-    done
 done
 sed -i 's/generic-icon name="wps-office-/icon name="com.wps.Office./g' export/share/mime/packages/com.wps.Office.*.xml
 
