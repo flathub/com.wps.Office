@@ -6,13 +6,13 @@ mkdir -p deb-package export/share
 ar p wps-office.deb data.tar.xz | tar -xJf - -C deb-package
 
 mv deb-package/opt/kingsoft/wps-office .
-mv deb-package/usr/bin/{wps,wpp,et} wps-office/
+mv deb-package/usr/bin/{wps,wpp,et,wpspdf} wps-office/
 mv deb-package/usr/share/{icons,applications,mime} export/share/
 rm export/share/applications/appurl.desktop
 
 rename "wps-office-" "com.wps.Office." export/share/{icons/hicolor/*/*,applications,mime/packages}/wps-office-*.*
 
-for a in wps wpp et; do
+for a in wps wpp et pdf; do
     desktop_file="export/share/applications/com.wps.Office.$a.desktop"
     desktop-file-edit --set-key="Exec" --set-value="$a %f" "$desktop_file"
     desktop-file-edit --set-key="Icon" --set-value="com.wps.Office.${a}main" "$desktop_file"
