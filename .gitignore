@@ -1,3 +1,3 @@
 .flatpak-builder
-com.wps.Office.spellcheck.*.yml
-com.wps.Office.spellcheck.*.metainfo.xml
+/locales/com.wps.Office.spellcheck.*.yml
+/locales/com.wps.Office.spellcheck.*.metainfo.xml
