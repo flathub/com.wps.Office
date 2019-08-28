@@ -27,7 +27,11 @@ modules:
         dest-filename: apply_extra.sh
         commands:
           - unzip @LANG@.zip
-          - test -d @LANG@ && mv @LANG@/* ./ && rmdir @LANG@
+          - |
+            if [ -d @LANG@ ]; then
+              mv @LANG@/* ./
+              rmdir @LANG@
+            fi
           - rm @LANG@.zip
 
       - type: file
