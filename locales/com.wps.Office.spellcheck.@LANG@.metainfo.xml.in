@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="addon">
+  <id>com.wps.Office.spellcheck.@LANG@</id>
+  <extends>com.wps.Office</extends>
+  <name>@DICT_NAME@</name>
+  <summary>@DICT_SUMMARY@</summary>
+  <project_license>@DICT_LICENSE@</project_license>
+  <metadata_license>CC0-1.0</metadata_license>
+</component>

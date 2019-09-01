@@ -1,0 +1,38 @@
+id: com.wps.Office.spellcheck.@LANG@
+build-extension: true
+branch: stable
+runtime: com.wps.Office
+runtime-version: stable
+sdk: org.freedesktop.Sdk//18.08
+appstream-compose: false
+modules:
+  - name: dict-@LANG@
+    buildsystem: simple
+    build-commands:
+      - install -Dm755 apply_extra.sh ${FLATPAK_DEST}/bin/apply_extra
+      - |
+        for f in dict.conf main.aff main.dic; do
+          ln -s extra/$f ${FLATPAK_DEST}/$f
+        done
+      - install -Dm644 ${FLATPAK_ID}.metainfo.xml -t ${FLATPAK_DEST}/share/metainfo/
+      - appstream-compose --basename=${FLATPAK_ID} --prefix=${FLATPAK_DEST} --origin=flatpak ${FLATPAK_ID}
+    sources:
+      - type: extra-data
+        filename: @LANG@.zip
+        url: "http://wps-community.org/download/dicts/@LANG@.zip"
+        sha256: @DICT_SHA256@
+        size: @DICT_SIZE@
+
+      - type: script
+        dest-filename: apply_extra.sh
+        commands:
+          - unzip @LANG@.zip
+          - |
+            if [ -d @LANG@ ]; then
+              mv @LANG@/* ./
+              rmdir @LANG@
+            fi
+          - rm @LANG@.zip
+
+      - type: file
+        path: com.wps.Office.spellcheck.@LANG@.metainfo.xml

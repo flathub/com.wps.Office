@@ -6,8 +6,6 @@ tags:
   - proprietary
 command: wps
 separate-locales: false
-build-options:
-  no-debuginfo: true
 finish-args:
   - --share=ipc
   - --socket=x11
@@ -22,6 +20,13 @@ finish-args:
   - --filesystem=xdg-videos
   - --filesystem=/run/media
   - --filesystem=/media
+add-extensions:
+  com.wps.Office.spellcheck:
+    directory: extra/wps-office/office6/dicts/spellcheck
+    subdirectories: true
+    no-autodownload: true
+    autodelete: true
+
 cleanup:
   - "*.a"
   - "*.la"
