@@ -91,6 +91,6 @@ modules:
         filename: wps-office.deb
         only-arches:
           - 'x86_64'
-        url: "http://packages.deepin.com/deepin/pool/non-free/w/wps-office/wps-office_11.1.0.8722_amd64.deb"
-        sha256: 9b314922fb164465f362b0000f46fcd48f5d6cf9ae5b5331c9865914eb50290b
-        size: 259160398
+        url: "http://kdl.cc.ksosoft.com/wps-community/download/8865/wps-office_11.1.0.8865_amd64.deb"
+        sha256: 4ae360aeaadb7c0e73b879bc940c8351901a245998e33fa0f5f25940d5b42d27
+        size: 252991358
