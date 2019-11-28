@@ -91,6 +91,6 @@ modules:
         filename: wps-office.deb
         only-arches:
           - 'x86_64'
-        url: "http://kdl.cc.ksosoft.com/wps-community/download/8865/wps-office_11.1.0.8865_amd64.deb"
+        url: "http://wdl1.pcfg.cache.wpscdn.com/wpsdl/wpsoffice/download/linux/8865/wps-office_11.1.0.8865_amd64.deb"
         sha256: 4ae360aeaadb7c0e73b879bc940c8351901a245998e33fa0f5f25940d5b42d27
         size: 252991358
