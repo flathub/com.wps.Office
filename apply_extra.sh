@@ -22,9 +22,11 @@ for a in wps wpp et pdf; do
         pdf) appbin=wpspdf ;;
         *) appbin="$a" ;;
     esac
-    desktop-file-edit --set-key="Exec" --set-value="$appbin %f" "$desktop_file"
-    desktop-file-edit --set-key="Icon" --set-value="com.wps.Office.${YEAR_SUFFIX}-${a}main" "$desktop_file"
-    desktop-file-edit --set-key="X-Flatpak-RenamedFrom" --set-value="wps-office-$a.desktop;" "$desktop_file"
+    desktop-file-edit \
+        --set-key="Exec" --set-value="$appbin %f" \
+        --set-key="Icon" --set-value="com.wps.Office.${YEAR_SUFFIX}-${a}main" \
+        --set-key="X-Flatpak-RenamedFrom" --set-value="wps-office-$a.desktop;" \
+        "$desktop_file"
 done
 sed -i 's/generic-icon name="wps-office-/icon name="com.wps.Office./g' export/share/mime/packages/com.wps.Office.*.xml
 
