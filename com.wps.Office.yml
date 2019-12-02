@@ -42,9 +42,7 @@ modules:
 
   - shared-modules/qt4/qt4-4.8.7-minimal.json
 
-  - shared-modules/udev/udev-175.json
-
-  - shared-modules/glu/glu-9.0.0.json
+  - shared-modules/glu/glu-9.json
 
   - name: wps-i18n
     no-autogen: true
@@ -55,7 +53,7 @@ modules:
     sources:
       - type: git
         url: "https://github.com/wps-community/wps_i18n.git"
-        commit: 14b3393e1aeba1015d9613970fa22ab2a2534970
+        commit: cd7cd5cf277e74f1f7212b129c24f92cb2595342
 
       - type: patch
         path: wps-i18n-fix-tags.patch
@@ -94,3 +92,4 @@ modules:
         url: "http://wdl1.pcfg.cache.wpscdn.com/wpsdl/wpsoffice/download/linux/8865/wps-office_11.1.0.8865_amd64.deb"
         sha256: 4ae360aeaadb7c0e73b879bc940c8351901a245998e33fa0f5f25940d5b42d27
         size: 252991358
+        installed-size: 988628479
