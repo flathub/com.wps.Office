@@ -93,3 +93,8 @@ modules:
         sha256: 4ae360aeaadb7c0e73b879bc940c8351901a245998e33fa0f5f25940d5b42d27
         size: 252991358
         installed-size: 988628479
+        x-checker-data:
+          type: html
+          url: "https://linux.wps.com/js/meta.js"
+          version-pattern: version\s*=\s*"([\d.-]+)"
+          url-pattern: download_link_deb\s*=\s*"(http[s]?://[\w\d$-_@.&+]+)"
