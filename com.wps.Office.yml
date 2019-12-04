@@ -42,7 +42,9 @@ modules:
 
   - shared-modules/qt4/qt4-4.8.7-minimal.json
 
-  - shared-modules/glu/glu-9.json
+  - shared-modules/udev/udev-175.json
+
+  - shared-modules/glu/glu-9.0.0.json
 
   - name: wps-i18n
     no-autogen: true
