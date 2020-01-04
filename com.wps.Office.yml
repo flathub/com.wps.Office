@@ -36,8 +36,6 @@ cleanup:
 modules:
   - shared-modules/gtk2/gtk2.json
 
-  - shared-modules/udev/udev-175.json
-
   - shared-modules/glu/glu-9.json
 
   - name: wps-i18n
@@ -65,7 +63,7 @@ modules:
       - ln -s wps /app/bin/et
       - ln -s wps /app/bin/wpp
       - ln -s wps /app/bin/wpspdf
-      - install -Dm644 ${FLATPAK_ID}.appdata.xml -t /app/share/appdata/
+      - install -Dm644 ${FLATPAK_ID}.metainfo.xml -t /app/share/metainfo/
       - install -Dm755 /usr/bin/desktop-file-edit -t /app/bin/
       - install -Dm755 /usr/bin/ar -t /app/bin/
       - install -Dm755 /usr/lib/$(gcc -print-multiarch)/libbfd-*.so -t /app/lib/
@@ -74,7 +72,7 @@ modules:
         path: apply_extra.sh
 
       - type: file
-        path: com.wps.Office.appdata.xml
+        path: com.wps.Office.metainfo.xml
 
       - type: file
         path: wps.sh
