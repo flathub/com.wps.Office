@@ -3,7 +3,7 @@ build-extension: true
 branch: stable
 runtime: com.wps.Office
 runtime-version: stable
-sdk: org.freedesktop.Sdk//18.08
+sdk: org.kde.Sdk//5.13
 appstream-compose: false
 modules:
   - name: dict-@LANG@
