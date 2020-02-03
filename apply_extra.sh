@@ -15,15 +15,22 @@ YEAR_SUFFIX=2019
 rename --no-overwrite "wps-office-" "com.wps.Office." export/share/{icons/hicolor/*/*,applications,mime/packages}/wps-office-*.*
 rename --no-overwrite "wps-office${YEAR_SUFFIX}-" "com.wps.Office." export/share/icons/hicolor/*/*/wps-office${YEAR_SUFFIX}-*.*
 
-for a in wps wpp et pdf; do
+for a in wps wpp et pdf prometheus; do
     desktop_file="export/share/applications/com.wps.Office.$a.desktop"
+    appbin="$a"
+    appicon="com.wps.Office.${a}main"
     case "$a" in
-        pdf) appbin=wpspdf ;;
-        *) appbin="$a" ;;
+        pdf)
+            appbin=wpspdf
+        ;;
+        prometheus)
+            appbin=wps
+            appicon="com.wps.Office.k${a}"
+        ;;
     esac
     desktop-file-edit \
         --set-key="Exec" --set-value="$appbin %f" \
-        --set-key="Icon" --set-value="com.wps.Office.${a}main" \
+        --set-key="Icon" --set-value="$appicon" \
         --set-key="X-Flatpak-RenamedFrom" --set-value="wps-office-$a.desktop;" \
         "$desktop_file"
 done
