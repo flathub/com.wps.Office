@@ -1,7 +1,7 @@
 id: com.wps.Office
 runtime: org.freedesktop.Platform
 runtime-version: '19.08'
-sdk: org.kde.Sdk//5.13
+sdk: org.kde.Sdk//5.14
 tags:
   - proprietary
 command: wps
