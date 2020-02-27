@@ -1,7 +1,7 @@
 id: com.wps.Office
 runtime: org.freedesktop.Platform
 runtime-version: '19.08'
-sdk: org.kde.Sdk//5.13
+sdk: org.kde.Sdk//5.14
 tags:
   - proprietary
 command: wps
@@ -28,8 +28,8 @@ add-extensions:
     autodelete: true
 
 cleanup:
-  - "*.a"
-  - "*.la"
+  - '*.a'
+  - '*.la'
   - /include
   - /lib/pkgconfig
   - /lib/cmake
@@ -46,7 +46,7 @@ modules:
       - DESTDIR=/app/share/wps/office6
     sources:
       - type: git
-        url: "https://github.com/wps-community/wps_i18n.git"
+        url: https://github.com/wps-community/wps_i18n.git
         commit: cd7cd5cf277e74f1f7212b129c24f92cb2595342
 
       - type: patch
@@ -80,13 +80,13 @@ modules:
       - type: extra-data
         filename: wps-office.deb
         only-arches:
-          - 'x86_64'
-        url: "http://wdl1.pcfg.cache.wpscdn.com/wpsdl/wpsoffice/download/linux/8865/wps-office_11.1.0.8865_amd64.deb"
-        sha256: a8adc62d0c5245ed312d6454437c924b7760dacd5f7a71aeb5997ee85590d7c1
-        size: 252362146
+          - x86_64
+        url: http://wdl1.pcfg.cache.wpscdn.com/wpsdl/wpsoffice/download/linux/9126/wps-office_11.1.0.9126.XA_amd64.deb
+        sha256: e7baba3ea146fb1fc8a737f2dcf8a7ad03098b41269a5484cce0c440efd3a581
+        size: 205954802
         installed-size: 988671247
         x-checker-data:
           type: html
-          url: "https://linux.wps.com/js/meta.js"
+          url: https://linux.wps.com/js/meta.js
           version-pattern: version\s*=\s*"([\d.-]+)"
           url-pattern: download_link_deb\s*=\s*"(http[s]?://[\w\d$-_@.&+]+)"

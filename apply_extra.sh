@@ -9,7 +9,6 @@ ar p wps-office.deb data.tar.xz | tar -xJf - -C deb-package
 mv deb-package/opt/kingsoft/wps-office .
 mv deb-package/usr/bin/{wps,wpp,et,wpspdf} wps-office/
 mv deb-package/usr/share/{icons,applications,mime} export/share/
-rm export/share/applications/appurl.desktop
 
 YEAR_SUFFIX=2019
 
