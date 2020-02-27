@@ -4,10 +4,11 @@ function msg() {
     echo "Wrapper: $*" >&2
 }
 
-CONF_FILE="${XDG_CONFIG_HOME}/Kingsoft/Office.conf"
+DEFAULT_DATA_HOME="${HOME}/.local/share"
 
+CONF_FILE="${XDG_CONFIG_HOME}/Kingsoft/Office.conf"
 BACKUPS_SUBDIR="Kingsoft/office6/data/backup"
-OLD_BACKUP_PATH="${HOME}/.local/share/${BACKUPS_SUBDIR}"
+OLD_BACKUP_PATH="${DEFAULT_DATA_HOME}/${BACKUPS_SUBDIR}"
 NEW_BACKUP_PATH="${XDG_DATA_HOME}/${BACKUPS_SUBDIR}"
 
 # Set backup path to correct dir under XDG_DATA_HOME in the config
@@ -26,8 +27,9 @@ elif grep -q "${OLD_BACKUP_PATH}" "${CONF_FILE}"; then
 fi
 
 # Symlink hardcoded datadir to XDG_DATA_HOME
-if [ ! -d "${HOME}/.local/share/Kingsoft" ]; then
-    ln -s "${XDG_DATA_HOME}/Kingsoft" "${HOME}/.local/share/Kingsoft"
+if [ ! -d "${DEFAULT_DATA_HOME}/Kingsoft" ]; then
+    test -d "${DEFAULT_DATA_HOME}" || mkdir -p "${DEFAULT_DATA_HOME}"
+    ln -s "${XDG_DATA_HOME}/Kingsoft" "${DEFAULT_DATA_HOME}/Kingsoft"
 else
     msg "Data dir exists, not touching it"
 fi
