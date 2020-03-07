@@ -74,10 +74,8 @@ modules:
       - type: file
         path: com.wps.Office.metainfo.xml
 
-      - type: script
-        dest-filename: wps.sh
-        commands:
-          - exec /app/extra/wps-office/$(basename $0) "$@"
+      - type: file
+        path: wps.sh
 
       - type: extra-data
         filename: wps-office.deb
