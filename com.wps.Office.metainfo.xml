@@ -28,6 +28,7 @@
     <category>Office</category>
   </categories>
   <releases>
+    <release version="11.1.0.9522" date="2020-06-06"/>
     <release version="11.1.0.9505" date="2020-04-08"/>
     <release version="11.1.0.9126" date="2020-02-27"/>
     <release version="11.1.0.9080" date="2020-01-09"/>
