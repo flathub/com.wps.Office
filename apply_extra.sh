@@ -1,6 +1,7 @@
 #!/bin/bash
 set -e
 shopt -s failglob
+FLATPAK_ID="${FLATPAK_ID:-com.wps.Office}"
 
 mkdir -p deb-package export/share
 
@@ -12,20 +13,20 @@ mv deb-package/usr/share/{icons,applications,mime} export/share/
 
 YEAR_SUFFIX=2019
 
-rename --no-overwrite "wps-office-" "com.wps.Office." export/share/{icons/hicolor/*/*,applications,mime/packages}/wps-office-*.*
-rename --no-overwrite "wps-office${YEAR_SUFFIX}-" "com.wps.Office." export/share/icons/hicolor/*/*/wps-office${YEAR_SUFFIX}-*.*
+rename --no-overwrite "wps-office-" "${FLATPAK_ID}." export/share/{icons/hicolor/*/*,applications,mime/packages}/wps-office-*.*
+rename --no-overwrite "wps-office${YEAR_SUFFIX}-" "${FLATPAK_ID}." export/share/icons/hicolor/*/*/wps-office${YEAR_SUFFIX}-*.*
 
 for a in wps wpp et pdf prometheus; do
-    desktop_file="export/share/applications/com.wps.Office.$a.desktop"
+    desktop_file="export/share/applications/${FLATPAK_ID}.$a.desktop"
     appbin="$a"
-    appicon="com.wps.Office.${a}main"
+    appicon="${FLATPAK_ID}.${a}main"
     case "$a" in
         pdf)
             appbin=wpspdf
         ;;
         prometheus)
             appbin=wps
-            appicon="com.wps.Office.k${a}"
+            appicon="${FLATPAK_ID}.k${a}"
         ;;
     esac
     desktop-file-edit \
@@ -34,11 +35,11 @@ for a in wps wpp et pdf prometheus; do
         --set-key="X-Flatpak-RenamedFrom" --set-value="wps-office-$a.desktop;" \
         "$desktop_file"
 done
-sed -i 's/generic-icon name="wps-office-/icon name="com.wps.Office./g' export/share/mime/packages/com.wps.Office.*.xml
+sed -i "s/generic-icon name=\"wps-office-/icon name=\"${FLATPAK_ID}./g" "export/share/mime/packages/${FLATPAK_ID}".*.xml
 
 for l in /app/share/wps/office6/mui/*; do
-    d=$(basename $l)
-    test -d wps-office/office6/mui/$d || ln -sr /app/share/wps/office6/mui/$d wps-office/office6/mui/$d
+    d="$(basename "$l")"
+    test -d "wps-office/office6/mui/$d" || ln -sr "$l" "wps-office/office6/mui/$d"
 done
 
 rm -r wps-office.deb deb-package
