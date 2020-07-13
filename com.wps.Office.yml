@@ -44,6 +44,8 @@ modules:
       - DESTDIR=/app/share/wps/office6
     make-install-args:
       - DESTDIR=/app/share/wps/office6
+    cleanup:
+      - /share/wps/office6/mui/*/templates
     sources:
       - type: git
         url: https://github.com/wps-community/wps_i18n.git
