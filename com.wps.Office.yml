@@ -1,7 +1,7 @@
 id: com.wps.Office
 runtime: org.freedesktop.Platform
 runtime-version: '20.08'
-sdk: org.kde.Sdk//5.15
+sdk: org.freedesktop.Sdk
 tags:
   - proprietary
 command: wps
@@ -38,25 +38,6 @@ modules:
 
   - shared-modules/glu/glu-9.json
 
-  - name: wps-i18n
-    no-autogen: true
-    make-args:
-      - DESTDIR=/app/share/wps/office6
-    make-install-args:
-      - DESTDIR=/app/share/wps/office6
-    cleanup:
-      - /share/wps/office6/mui/*/templates
-    sources:
-      - type: git
-        url: https://github.com/wps-community/wps_i18n.git
-        commit: cd7cd5cf277e74f1f7212b129c24f92cb2595342
-
-      - type: patch
-        path: wps-i18n-fix-tags.patch
-
-      - type: patch
-        path: wps-i18n-makefile-destdir.patch
-
   - name: wps
     buildsystem: simple
     build-commands:
@@ -83,9 +64,9 @@ modules:
         filename: wps-office.deb
         only-arches:
           - x86_64
-        url: http://wdl1.pcfg.cache.wpscdn.com/wpsdl/wpsoffice/download/linux/9662/wps-office_11.1.0.9662.XA_amd64.deb
-        sha256: 7ebb10965db179e44ccf97ef4526bd47a70dddce4df40d6a788a95dc894d7630
-        size: 225471032
+        url: https://wdl1.pcfg.cache.wpscdn.com/wpsdl/wpsoffice/download/linux/9711/wps-office_11.1.0.9711.XA_amd64.deb
+        sha256: 16f1353293125d008dbb292d8a96d0c46bd713d0f5414b1330eec961f0437fde
+        size: 225767026
         installed-size: 988671247
         x-checker-data:
           type: html

@@ -37,9 +37,4 @@ for a in wps wpp et pdf prometheus; do
 done
 sed -i "s/generic-icon name=\"wps-office-/icon name=\"${FLATPAK_ID}./g" "export/share/mime/packages/${FLATPAK_ID}".*.xml
 
-for l in /app/share/wps/office6/mui/*; do
-    d="$(basename "$l")"
-    test -d "wps-office/office6/mui/$d" || ln -sr "$l" "wps-office/office6/mui/$d"
-done
-
 rm -r wps-office.deb deb-package
