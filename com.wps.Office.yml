@@ -1,7 +1,7 @@
 id: com.wps.Office
 runtime: org.freedesktop.Platform
 runtime-version: '20.08'
-sdk: org.kde.Sdk//5.15
+sdk: org.freedesktop.Sdk
 tags:
   - proprietary
 command: wps
@@ -37,25 +37,6 @@ modules:
   - shared-modules/gtk2/gtk2.json
 
   - shared-modules/glu/glu-9.json
-
-  - name: wps-i18n
-    no-autogen: true
-    make-args:
-      - DESTDIR=/app/share/wps/office6
-    make-install-args:
-      - DESTDIR=/app/share/wps/office6
-    cleanup:
-      - /share/wps/office6/mui/*/templates
-    sources:
-      - type: git
-        url: https://github.com/wps-community/wps_i18n.git
-        commit: cd7cd5cf277e74f1f7212b129c24f92cb2595342
-
-      - type: patch
-        path: wps-i18n-fix-tags.patch
-
-      - type: patch
-        path: wps-i18n-makefile-destdir.patch
 
   - name: wps
     buildsystem: simple
