@@ -40,7 +40,7 @@ sed -i "s/generic-icon name=\"wps-office-/icon name=\"${FLATPAK_ID}./g" "export/
 while read -r lang; do
     for target in mui dicts/spellcheck; do
         if [ ! -e "wps-office/office6/$target/$lang" ]; then
-            ln -sr "/app/share/wps-office/office6/$target/$lang" "wps-office/office6/$target/$lang"
+            ln -sr "/app/share/wps-office/office6/$target/$lang/data" "wps-office/office6/$target/$lang"
         fi
     done
 done </app/share/wps-office/locales-list.txt
