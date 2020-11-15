@@ -37,4 +37,12 @@ for a in wps wpp et pdf prometheus; do
 done
 sed -i "s/generic-icon name=\"wps-office-/icon name=\"${FLATPAK_ID}./g" "export/share/mime/packages/${FLATPAK_ID}".*.xml
 
+while read -r lang; do
+    for target in mui dicts/spellcheck; do
+        if [ ! -e "wps-office/office6/$target/$lang" ]; then
+            ln -sr "/app/share/wps-office/office6/$target/$lang" "wps-office/office6/$target/$lang"
+        fi
+    done
+done </app/share/wps-office/locales-list.txt
+
 rm -r wps-office.deb deb-package
