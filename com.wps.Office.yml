@@ -20,6 +20,8 @@ finish-args:
   - --filesystem=xdg-videos
   - --filesystem=/run/media
   - --filesystem=/media
+# required for fcitx5's fcitx4frontend addon
+  - --talk-name=org.fcitx.*
 add-extensions:
   com.wps.Office.spellcheck:
     directory: extra/wps-office/office6/dicts/spellcheck
