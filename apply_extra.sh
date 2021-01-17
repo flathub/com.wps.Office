@@ -39,7 +39,5 @@ sed -i "s/generic-icon name=\"wps-office-/icon name=\"${FLATPAK_ID}./g" "export/
 
 rm -r wps-office.deb deb-package
 
-# Remove the WPS own im module and replace with the fcitx offical one.
-rm wps-office/office6/qt/plugins/inputmethods/libqim-fcitx.so
-# While ln -s works, qt factory cache does not work properly on refreshing on symlink.
-cp /app/lib/qtim-fcitx.so wps-office/office6/qt/plugins/inputmethods/
+# Remove plugin path so we can override the default path with based on QT_PLUGIN_PATH
+sed -i 's|^Plugins=.*||g' wps-office/office6/qt.conf

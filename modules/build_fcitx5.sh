@@ -21,6 +21,7 @@ cd build
 cmake -DQT_QMAKE_EXECUTABLE=$PWD/../../bin/qmake -DWPS_LIBRARY_DIR=$WPS_LIBRARY_DIR ..
 make install
 
-cp $WPS_LIBRARY_DIR/qt/plugins/inputmethods/qtim-fcitx.so /app/lib
+mkdir -p /app/lib/qt
+mv $WPS_LIBRARY_DIR/qt/plugins/inputmethods/ /app/lib/qt
 
 
