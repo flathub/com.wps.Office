@@ -1,8 +1,5 @@
 #!/bin/bash
 
-mkdir -p deb-package
-ar p wps-office.deb data.tar.xz | tar -xJf - -C deb-package
-
 WPS_LIBRARY_DIR=$PWD/deb-package/opt/kingsoft/wps-office/office6
 
 sed -i 's/^CFG_INOTIFY=.*/CFG_INOTIFY=no/g' configure
