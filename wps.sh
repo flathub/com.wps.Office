@@ -34,5 +34,4 @@ else
     msg "Data dir exists, not touching it"
 fi
 
-# Override plugin path
-QT_PLUGIN_PATH=/app/lib/qt:/app/extra/wps-office/office6/qt/plugins exec "/app/extra/wps-office/$(basename "$0")" "$@"
+exec "/app/extra/wps-office/$(basename "$0")" "$@"
