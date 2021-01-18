@@ -38,3 +38,6 @@ done
 sed -i "s/generic-icon name=\"wps-office-/icon name=\"${FLATPAK_ID}./g" "export/share/mime/packages/${FLATPAK_ID}".*.xml
 
 rm -r wps-office.deb deb-package
+
+# Remove plugin path so we can override the default path with based on QT_PLUGIN_PATH
+sed -i 's|^Plugins=.*||g' wps-office/office6/qt.conf

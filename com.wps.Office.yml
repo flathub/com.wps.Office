@@ -20,8 +20,7 @@ finish-args:
   - --filesystem=xdg-videos
   - --filesystem=/run/media
   - --filesystem=/media
-# required for fcitx5's fcitx4frontend addon
-  - --talk-name=org.fcitx.*
+  - --env=QT_PLUGIN_PATH=/app/lib/qt:/app/extra/wps-office/office6/qt/plugins
 add-extensions:
   com.wps.Office.spellcheck:
     directory: extra/wps-office/office6/dicts/spellcheck
@@ -39,6 +38,8 @@ modules:
   - shared-modules/gtk2/gtk2.json
 
   - shared-modules/glu/glu-9.json
+
+  - modules/fcitx-im-module.yml
 
   - name: wps
     buildsystem: simple
@@ -75,3 +76,4 @@ modules:
           url: https://linux.wps.com/js/meta.js
           version-pattern: version\s*=\s*"([\d.-]+)"
           url-pattern: download_link_deb\s*=\s*"(http[s]?://[\w\d$-_@.&+]+)"
+
