@@ -3,6 +3,7 @@ buildsystem: simple
 sources:
   - type: git
     url: https://github.com/qt/qt.git
+    dest: qt
     tag: v4.7.4
     commit: 092cd760d5fddf9640a310214fe01929f0fff3a8
   - type: git
