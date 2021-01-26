@@ -1,9 +1,11 @@
 name: fcitx-im-module
 buildsystem: simple
 sources:
-  - type: archive
-    url: https://download.qt.io/archive/qt/4.7/qt-everywhere-opensource-src-4.7.4.tar.gz
-    sha256: 97195ebce8a46f9929fb971d9ae58326d011c4d54425389e6e936514f540221e
+  - type: git
+    url: https://github.com/qt/qt.git
+    dest: qt
+    tag: v4.7.4
+    commit: 092cd760d5fddf9640a310214fe01929f0fff3a8
   - type: git
     url: https://github.com/wengxt/fcitx5-wps
     dest: fcitx5-wps

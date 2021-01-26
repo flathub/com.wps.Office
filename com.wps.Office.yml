@@ -20,7 +20,7 @@ finish-args:
   - --filesystem=xdg-videos
   - --filesystem=/run/media
   - --filesystem=/media
-  - --env=QT_PLUGIN_PATH=/app/lib/qt:/app/extra/wps-office/office6/qt/plugins
+  - --env=QT_PLUGIN_PATH=/app/lib/qt/plugins:/app/extra/wps-office/office6/qt/plugins
 add-extensions:
   com.wps.Office.spellcheck:
     directory: extra/wps-office/office6/dicts/spellcheck
