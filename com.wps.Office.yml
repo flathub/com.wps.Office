@@ -23,7 +23,13 @@ finish-args:
   - --env=QT_PLUGIN_PATH=/app/lib/qt/plugins:/app/extra/wps-office/office6/qt/plugins
 add-extensions:
   com.wps.Office.spellcheck:
-    directory: extra/wps-office/office6/dicts/spellcheck
+    directory: share/wps-office/office6/dicts/spellcheck
+    subdirectories: true
+    no-autodownload: true
+    autodelete: true
+
+  com.wps.Office.MUI:
+    directory: share/wps-office/office6/mui
     subdirectories: true
     no-autodownload: true
     autodelete: true
@@ -53,6 +59,8 @@ modules:
       - install -Dm755 /usr/bin/desktop-file-edit -t /app/bin/
       - install -Dm755 /usr/bin/ar -t /app/bin/
       - install -Dm755 /usr/lib/$(gcc -print-multiarch)/libbfd-*.so -t /app/lib/
+      - mkdir -p /app/share/wps-office/office6/{mui,dicts/spellcheck}
+      - sed 1d locales.csv | cut -d, -f1 > /app/share/wps-office/locales-list.txt
     sources:
       - type: file
         path: apply_extra.sh
@@ -62,6 +70,9 @@ modules:
 
       - type: file
         path: wps.sh
+
+      - type: file
+        path: locales/locales.csv
 
       - type: extra-data
         filename: wps-office.deb
