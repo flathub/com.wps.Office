@@ -68,8 +68,8 @@ modules:
         only-arches:
           - x86_64
         url: https://wdl1.pcfg.cache.wpscdn.com/wpsdl/wpsoffice/download/linux/10161/wps-office_11.1.0.10161.XA_amd64.deb
-        sha256: 8ca6084428693c81833f6fdf13442a9ea9052638d5bdc0e4d7512075f40007c3
-        size: 228984666
+        sha256: 757ff8b1a3d5e507fcb0e30735736b1cff528739df57003588d107a44bb0e1a6
+        size: 74547306
         installed-size: 988671247
         x-checker-data:
           type: html
