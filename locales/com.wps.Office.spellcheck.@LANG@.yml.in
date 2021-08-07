@@ -1,9 +1,9 @@
 id: com.wps.Office.spellcheck.@LANG@
 build-extension: true
-branch: stable
+default-branch: stable
 runtime: com.wps.Office
 runtime-version: stable
-sdk: org.freedesktop.Sdk//18.08
+sdk: org.freedesktop.Sdk//20.08
 appstream-compose: false
 modules:
   - name: dict-@LANG@
@@ -18,10 +18,10 @@ modules:
       - appstream-compose --basename=${FLATPAK_ID} --prefix=${FLATPAK_DEST} --origin=flatpak ${FLATPAK_ID}
     sources:
       - type: extra-data
-        filename: @LANG@.zip
-        url: "http://wps-community.org/download/dicts/@LANG@.zip"
-        sha256: @DICT_SHA256@
-        size: @DICT_SIZE@
+        filename: "@LANG@.zip"
+        url: "@DICT_URL@"
+        sha256: "@DICT_SHA256@"
+        size: "@DICT_SIZE@"
 
       - type: script
         dest-filename: apply_extra.sh

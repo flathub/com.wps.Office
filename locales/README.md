@@ -4,8 +4,6 @@ This is a set of files to help you create a spellcheck dictionary extension.
 
 1. Populate [locales.csv](locales.csv) according to your language. Expected fields:
    * `lang` - language code
-   * `dict_size` - size of the `.zip` archive with the dict, in bytes
-   * `dict_sha256` - sha256 checksum of the zrchive
    * `dict_name` - localized, user-friendly name of the dictionary extension in the corresponding language, e.g. translated "English dictionary"
    * `dict_summary` - short description of the extension in corresponding language, e.g. translated "Spellcheck dictionary for English language"
    * `dict_license` - licence of the dictionary, or `LicenseRef-proprietary` if unsure or no license provided
