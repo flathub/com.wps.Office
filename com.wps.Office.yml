@@ -69,5 +69,10 @@ modules:
           - x86_64
         url: https://wdl1.pcfg.cache.wpscdn.com/wpsdl/wpsoffice/download/linux/10920/wps-office_11.1.0.10920.XA_amd64.deb
         sha256: 253f3eafc69b04994a7fcbe0ef89f14f7c1eda31040479f583d2236af8563b2b
+        x-checker-data:
+          type: html
+          url: https://www.wps.com/whatsnew/linux/
+          version-pattern: \W(\d+\.\d+\.\d+\.\d+)\W
+          url-template: >-
+            https://wdl1.pcfg.cache.wpscdn.com/wpsdl/wpsoffice/download/linux/$version3/wps-office_$version.XA_amd64.deb
         size: 276990976
-        installed-size: 1278578232
