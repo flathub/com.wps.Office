@@ -14,7 +14,7 @@
     <p>NOTE: This wrapper is not verified by, affiliated with, or
     supported by Kingsoft Office Corporation</p>
   </description>
-  <icon type="remote">https://www.wps.com/assets/mediahub/WPS-Office-Mobile.png</icon>
+  <icon type="remote">https://website-prod.cache.wpscdn.com/img/logo_normal.4e969ab.svg</icon>
   <url type="homepage">https://www.wps.com/linux</url>
   <url type="bugtracker">http://community.wps.cn/bug/login_page.php</url>
   <url type="donation">http://wps-community.org/donate</url>
@@ -80,13 +80,13 @@
   </releases>
   <screenshots>
     <screenshot type="default">
-      <image>https://www.wps.com/images/wps4linux/Women_in_Dance_SpellCheck.png</image>
+      <image>https://website-prod.cache.wpscdn.com/img/slider_3.c233a64.png</image>
   </screenshot>
     <screenshot>
-      <image>https://www.wps.com/images/wps4linux/Presentation_Slide2.png</image>
+      <image>https://website-prod.cache.wpscdn.com/img/slider_1.3a423d4.png</image>
   </screenshot>
     <screenshot>
-      <image>https://www.wps.com/images/wps4linux/Spreadsheets_Screenshot_Arial.png</image>
+      <image>https://website-prod.cache.wpscdn.com/img/slider_4.c704a50.png</image>
     </screenshot>
   </screenshots>
   <content_rating type="oars-1.1"/>
