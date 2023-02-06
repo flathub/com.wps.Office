@@ -24,4 +24,5 @@ modules:
     sources:
       - type: git
         url: https://invent.kde.org/frameworks/extra-cmake-modules.git
-        branch: "v5.78.0"
+        tag: "v5.78.0"
+        commit: 59d4958740a09d43aa5025a1cfe3d7b7d4d725b3
