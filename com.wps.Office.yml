@@ -67,9 +67,9 @@ modules:
         filename: wps-office.deb
         only-arches:
           - x86_64
-        url: https://wdl1.pcfg.cache.wpscdn.com/wpsdl/wpsoffice/download/linux/11698/wps-office_11.1.0.11698.XA_amd64.deb
-        sha256: b29ab140aff14c4f3214f9866d26eb0d8d6f4b191a9f6930016a42588131860b
-        size: 319464712
+        url: https://wdl1.pcfg.cache.wpscdn.com/wpsdl/wpsoffice/download/linux/11701/wps-office_11.1.0.11701.XA_amd64.deb
+        sha256: bc5dd70ef3bec8fc5e4228ec68eaaa98933183009cd77b936a18b880c973c85e
+        size: 319463286
         x-checker-data:
           type: html
           url: https://www.wps.com/whatsnew/linux/
