@@ -9,7 +9,7 @@ sources:
   - type: git
     url: https://github.com/wengxt/fcitx5-wps
     dest: fcitx5-wps
-    commit: f5c46de67b85c00457c30c96feafc60cbd6fa874
+    commit: ffd18d2a800d03482f263c0fe4170ee5b79de93a
   - type: file
     path: build_fcitx5.sh
 build-commands:
