@@ -7,9 +7,9 @@ sources:
     tag: v5.15.10-lts-lgpl
     commit: 29400a683f96867133b28299c0d0bd6bcf40df35
   - type: git
-    url: https://github.com/mlawson27/fcitx5-wps
+    url: https://github.com/wengxt/fcitx5-wps
     dest: fcitx5-wps
-    commit: 63912b4369cf405a0841c3a6abc23cc85096e018
+    commit: f5c46de67b85c00457c30c96feafc60cbd6fa874
   - type: file
     path: build_fcitx5.sh
 build-commands:
