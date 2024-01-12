@@ -34,4 +34,4 @@ else
     msg "Data dir exists, not touching it"
 fi
 
-exec "/app/extra/wps-office/$(basename "$0")" "$@"
+exec "/app/wps-office/$(basename "$0")" "$@"

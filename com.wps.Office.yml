@@ -20,10 +20,10 @@ finish-args:
   - --filesystem=xdg-videos
   - --filesystem=/run/media
   - --filesystem=/media
-  - --env=QT_PLUGIN_PATH=/app/lib/qt/plugins:/app/extra/wps-office/office6/qt/plugins
+  - --env=QT_PLUGIN_PATH=/app/lib/qt/plugins:/app/wps-office/office6/qt/plugins
 add-extensions:
   com.wps.Office.spellcheck:
-    directory: extra/wps-office/office6/dicts/spellcheck
+    directory: wps-office/office6/dicts/spellcheck
     subdirectories: true
     no-autodownload: true
     autodelete: true
@@ -44,18 +44,17 @@ modules:
   - name: wps
     buildsystem: simple
     build-commands:
-      - install -Dm755 apply_extra.sh /app/bin/apply_extra
-      - install -Dm755 wps.sh /app/bin/wps
-      - ln -s wps /app/bin/et
-      - ln -s wps /app/bin/wpp
-      - ln -s wps /app/bin/wpspdf
+      - install -Dm755 wps.sh /app/bin/wps-wrapper
+      - ln -s wps-wrapper /app/bin/et
+      - ln -s wps-wrapper /app/bin/wps
+      - ln -s wps-wrapper /app/bin/wpp
+      - ln -s wps-wrapper /app/bin/wpspdf
       - install -Dm644 ${FLATPAK_ID}.metainfo.xml -t /app/share/metainfo/
-      - install -Dm755 /usr/bin/desktop-file-edit -t /app/bin/
-      - install -Dm755 /usr/bin/ar -t /app/bin/
       - install -Dm755 /usr/lib/$(gcc -print-multiarch)/libbfd-*.so -t /app/lib/
+      - sh install_from_deb.sh
     sources:
       - type: file
-        path: apply_extra.sh
+        path: install_from_deb.sh
 
       - type: file
         path: com.wps.Office.metainfo.xml
@@ -63,13 +62,12 @@ modules:
       - type: file
         path: wps.sh
 
-      - type: extra-data
-        filename: wps-office.deb
+      - type: file
+        dest-filename: wps-office.deb
         only-arches:
           - x86_64
         url: https://wdl1.pcfg.cache.wpscdn.com/wpsdl/wpsoffice/download/linux/11698/wps-office_11.1.0.11698.XA_amd64.deb
         sha256: b29ab140aff14c4f3214f9866d26eb0d8d6f4b191a9f6930016a42588131860b
-        size: 319464712
         x-checker-data:
           type: html
           url: https://www.wps.com/whatsnew/linux/

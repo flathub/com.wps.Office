@@ -3,21 +3,25 @@ set -e
 shopt -s failglob
 FLATPAK_ID="${FLATPAK_ID:-com.wps.Office}"
 
-mkdir -p deb-package export/share
+mkdir -p deb-package
 
 ar p wps-office.deb data.tar.xz | tar -xJf - -C deb-package
 
-mv deb-package/opt/kingsoft/wps-office .
-mv deb-package/usr/bin/{wps,wpp,et,wpspdf} wps-office/
-mv deb-package/usr/share/{icons,applications,mime} export/share/
+mv deb-package/opt/kingsoft/wps-office /app
+mv deb-package/usr/bin/{wps,wpp,et,wpspdf} /app/wps-office
 
 YEAR_SUFFIX=2019
 
-rename --no-overwrite "wps-office-" "${FLATPAK_ID}." export/share/{icons/hicolor/*/*,applications,mime/packages}/wps-office-*.*
-rename --no-overwrite "wps-office${YEAR_SUFFIX}-" "${FLATPAK_ID}." export/share/icons/hicolor/*/*/wps-office${YEAR_SUFFIX}-*.*
+rename --no-overwrite "wps-office-" "${FLATPAK_ID}." deb-package/usr/share/{icons/hicolor/*/*,applications,mime/packages}/wps-office-*.*
+rename --no-overwrite "wps-office${YEAR_SUFFIX}-" "${FLATPAK_ID}." deb-package/usr/share/icons/hicolor/*/*/wps-office${YEAR_SUFFIX}-*.*
+
+for a in icons applications mime fonts templates; do
+    find "deb-package/usr/share/$a" -type f -exec chmod 644 {} +
+    mv "deb-package/usr/share/$a" /app/share/
+done
 
 for a in wps wpp et pdf prometheus; do
-    desktop_file="export/share/applications/${FLATPAK_ID}.$a.desktop"
+    desktop_file="/app/share/applications/${FLATPAK_ID}.$a.desktop"
     appbin="$a"
     appicon="${FLATPAK_ID}.${a}main"
     case "$a" in
@@ -35,9 +39,9 @@ for a in wps wpp et pdf prometheus; do
         --set-key="X-Flatpak-RenamedFrom" --set-value="wps-office-$a.desktop;" \
         "$desktop_file"
 done
-sed -i "s/generic-icon name=\"wps-office-/icon name=\"${FLATPAK_ID}./g" "export/share/mime/packages/${FLATPAK_ID}".*.xml
+sed -i "s/generic-icon name=\"wps-office-/icon name=\"${FLATPAK_ID}./g" "/app/share/mime/packages/${FLATPAK_ID}".*.xml
 
 rm -r wps-office.deb deb-package
 
 # Remove plugin path so we can override the default path with based on QT_PLUGIN_PATH
-sed -i 's|^Plugins=.*||g' wps-office/office6/qt.conf
+sed -i 's|^Plugins=.*||g' /app/wps-office/office6/qt.conf
