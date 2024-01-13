@@ -27,6 +27,10 @@ for a in wps wpp et pdf prometheus; do
         prometheus)
             appbin=wps
             appicon="${FLATPAK_ID}.k${a}"
+            # Use this as the main .desktop file for the Flatpak
+            new_desktop_file="$(dirname $desktop_file)/${FLATPAK_ID}.desktop"
+            mv $desktop_file $new_desktop_file
+            desktop_file=$new_desktop_file
         ;;
     esac
     desktop-file-edit \
