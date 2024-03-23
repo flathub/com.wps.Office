@@ -23,12 +23,13 @@
   <url type="translate">https://github.com/wps-community/wps_i18n</url>
   <developer_name>Kingsoft Office Corporation</developer_name>
   <update_contact>wps_linux_at_kingsoft.com</update_contact>
-  ​<launchable type="desktop-id">com.wps.Office.wps.desktop</launchable>
+  <launchable type="desktop-id">com.wps.Office.wps.desktop</launchable>
   <categories>
     <category>Office</category>
   </categories>
   <releases>
     <release version="11.1.0.11711" date="2023-11-24"/>
+    <release version="11.1.0.11708" date="2023-11-06"/>
     <release version="11.1.0.11698" date="2023-04-28"/>
     <release version="11.1.0.11691" date="2023-02-02"/>
     <release version="11.1.0.11664" date="2022-06-08"/>
