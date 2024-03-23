@@ -1,6 +1,6 @@
 id: com.wps.Office
 runtime: org.freedesktop.Platform
-runtime-version: '21.08'
+runtime-version: '23.08'
 sdk: org.freedesktop.Sdk
 tags:
   - proprietary
@@ -10,7 +10,6 @@ finish-args:
   - --share=ipc
   - --socket=x11
   - --socket=pulseaudio
-  - --share=network
   - --device=dri
   - --persist=.kingsoft
   - --env=TMPDIR=/var/tmp
