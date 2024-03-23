@@ -23,7 +23,7 @@
   <url type="translate">https://github.com/wps-community/wps_i18n</url>
   <developer_name>Kingsoft Office Corporation</developer_name>
   <update_contact>wps_linux_at_kingsoft.com</update_contact>
-  <launchable type="desktop-id">com.wps.Office.wps.desktop</launchable>
+  <launchable type="desktop-id">com.wps.Office.desktop</launchable>
   <categories>
     <category>Office</category>
   </categories>
