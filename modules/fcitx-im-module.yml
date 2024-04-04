@@ -2,14 +2,14 @@ name: fcitx-im-module
 buildsystem: simple
 sources:
   - type: git
-    url: https://github.com/qt/qt.git
+    url: https://github.com/qt/qtbase.git
     dest: qt
-    tag: v4.7.4
-    commit: 092cd760d5fddf9640a310214fe01929f0fff3a8
+    tag: v5.15.10-lts-lgpl
+    commit: 29400a683f96867133b28299c0d0bd6bcf40df35
   - type: git
     url: https://github.com/wengxt/fcitx5-wps
     dest: fcitx5-wps
-    commit: f5c46de67b85c00457c30c96feafc60cbd6fa874
+    commit: ffd18d2a800d03482f263c0fe4170ee5b79de93a
   - type: file
     path: build_fcitx5.sh
 build-commands:
