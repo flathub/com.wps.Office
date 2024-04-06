@@ -52,6 +52,7 @@ modules:
       - install -Dm644 ${FLATPAK_ID}.metainfo.xml -t /app/share/metainfo/
       - install -Dm755 /usr/bin/desktop-file-edit -t /app/bin/
       - install -Dm755 /usr/bin/ar -t /app/bin/
+      - install -Dm755 /usr/lib/x86_64-linux-gnu/libsframe.so* -t /app/lib/
       - install -Dm755 /usr/lib/$(gcc -print-multiarch)/libbfd-*.so -t /app/lib/
       - install -Dm644 com.wps.Office.desktop -t /app/share/applications
       - for icon_size in 64 128 256 512; do install -Dm644 wps_office_${icon_size}.png
