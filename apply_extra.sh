@@ -41,6 +41,9 @@ for a in wps wpp et pdf prometheus; do
 done
 sed -i "s/generic-icon name=\"wps-office-/icon name=\"${FLATPAK_ID}./g" "export/share/mime/packages/${FLATPAK_ID}".*.xml
 
+# Just use libstdc++.so.6 from the runtime; allows working with runtime 22.08+
+rm wps-office/office6/libstdc++.so.6
+
 rm -r wps-office.deb deb-package
 
 # Remove plugin path so we can override the default path with based on QT_PLUGIN_PATH
