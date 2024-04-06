@@ -41,6 +41,14 @@ modules:
 
   - modules/fcitx-im-module.yml
 
+  # Needed by wpspdf as of 11.1.0.11719
+  - name: libtiff5
+    buildsystem: cmake
+    sources:
+      - type: archive
+        url: https://download.osgeo.org/libtiff/tiff-4.4.0.tar.gz
+        sha256: 917223b37538959aca3b790d2d73aa6e626b688e02dcda272aec24c2f498abed
+
   - name: wps
     buildsystem: simple
     build-commands:
@@ -52,6 +60,7 @@ modules:
       - install -Dm644 ${FLATPAK_ID}.metainfo.xml -t /app/share/metainfo/
       - install -Dm755 /usr/bin/desktop-file-edit -t /app/bin/
       - install -Dm755 /usr/bin/ar -t /app/bin/
+      - install -Dm755 /usr/lib/x86_64-linux-gnu/libsframe.so* -t /app/lib/
       - install -Dm755 /usr/lib/$(gcc -print-multiarch)/libbfd-*.so -t /app/lib/
       - install -Dm644 com.wps.Office.desktop -t /app/share/applications
       - for icon_size in 64 128 256 512; do install -Dm644 wps_office_${icon_size}.png
