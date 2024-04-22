@@ -49,6 +49,15 @@ modules:
         url: https://download.osgeo.org/libtiff/tiff-4.4.0.tar.gz
         sha256: 917223b37538959aca3b790d2d73aa6e626b688e02dcda272aec24c2f498abed
 
+  # https://github.com/flathub/com.wps.Office/issues/150
+  - name: freetype
+    buildsystem: meson
+    sources:
+      - type: archive
+        url: https://download-mirror.savannah.gnu.org/releases/freetype/freetype-2.13.0.tar.xz
+        sha256: 5ee23abd047636c24b2d43c6625dcafc66661d1aca64dec9e0d05df29592624c
+
+
   - name: wps
     buildsystem: simple
     build-commands:
