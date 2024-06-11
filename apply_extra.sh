@@ -48,3 +48,8 @@ rm -r wps-office.deb deb-package
 
 # Remove plugin path so we can override the default path with based on QT_PLUGIN_PATH
 sed -i 's|^Plugins=.*||g' wps-office/office6/qt.conf
+
+# Fix wps deprecated python2 command
+# https://aur.archlinux.org/cgit/aur.git/tree/fix-wps-python-parse.patch?h=wps-office-cn
+sed -i 's/python -c '\''import sys, urllib; print urllib.unquote(sys.argv\[1\])'\''/python -c '\''import sys, urllib.parse; print(urllib.parse.unquote(sys.argv[1]))'\''/' wps-office/wps
+
