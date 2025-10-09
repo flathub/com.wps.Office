@@ -11,7 +11,7 @@ mv deb-package/opt/kingsoft/wps-office .
 mv deb-package/usr/bin/{wps,wpp,et,wpspdf} wps-office/
 mv deb-package/usr/share/{icons,applications,mime} export/share/
 
-YEAR_SUFFIX=2019
+YEAR_SUFFIX=2025
 
 rename --no-overwrite "wps-office-" "${FLATPAK_ID}." export/share/{icons/hicolor/*/*,applications,mime/packages}/wps-office-*.*
 rename --no-overwrite "wps-office${YEAR_SUFFIX}-" "${FLATPAK_ID}." export/share/icons/hicolor/*/*/wps-office${YEAR_SUFFIX}-*.*
