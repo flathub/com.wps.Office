@@ -1,6 +1,6 @@
 id: com.wps.Office
 runtime: org.freedesktop.Platform
-runtime-version: '23.08'
+runtime-version: '25.08'
 sdk: org.freedesktop.Sdk
 tags:
   - proprietary
@@ -35,8 +35,6 @@ cleanup:
   - /lib/pkgconfig
   - /lib/cmake
 modules:
-  - shared-modules/gtk2/gtk2.json
-
   - shared-modules/glu/glu-9.json
 
   - modules/fcitx-im-module.yml
