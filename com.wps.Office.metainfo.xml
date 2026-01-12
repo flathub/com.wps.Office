@@ -6,13 +6,12 @@
   <name>WPS Office</name>
   <summary>WPS Office Suite</summary>
   <description>
+    <p>**NOTE: This wrapper is not verified by, affiliated with, or supported by Kingsoft Office Corporation**</p>    
     <p>WPS Office including Writer, Presentation
     and Spreadsheets, is a powerful office suite, which is able to process
     word file, produce wonderful slides, and analyze data as well. It is
     deeply compatible with all of the latest Microsoft Office file formats.
     It can easily open and read the documents created with Microsoft Office.</p>
-    <p>NOTE: This wrapper is not verified by, affiliated with, or
-    supported by Kingsoft Office Corporation</p>
   </description>
   <icon type="remote">https://www.wps.com/_content/images/about/logo.png</icon>
   <url type="homepage">https://www.wps.com/linux</url>
