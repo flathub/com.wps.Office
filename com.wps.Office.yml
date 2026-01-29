@@ -1,6 +1,6 @@
 id: com.wps.Office
 runtime: org.freedesktop.Platform
-runtime-version: '23.08'
+runtime-version: '25.08'
 sdk: org.freedesktop.Sdk
 tags:
   - proprietary
@@ -41,6 +41,17 @@ modules:
 
   - modules/fcitx-im-module.yml
 
+  # Needed by libwpsmain on freedesktop platform 25.08
+  - name: libxml2-legacy
+    buildsystem: meson
+    sources:
+      - type: git
+        url: https://gitlab.gnome.org/GNOME/libxml2.git
+        tag: v2.13.9
+        commit: 04af2cabb9f859c198b8a553c028a87481199410
+      - type: patch
+        path: libxml2-legacy-0001-meson-Build-fixes.patch
+
   # Needed by wpspdf as of 11.1.0.11719
   - name: libtiff5
     buildsystem: cmake
@@ -56,7 +67,6 @@ modules:
       - type: archive
         url: https://download-mirror.savannah.gnu.org/releases/freetype/freetype-2.13.0.tar.xz
         sha256: 5ee23abd047636c24b2d43c6625dcafc66661d1aca64dec9e0d05df29592624c
-
 
   - name: wps
     buildsystem: simple
