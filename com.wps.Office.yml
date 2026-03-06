@@ -15,11 +15,6 @@ finish-args:
   - --persist=.kingsoft
   - --env=TMPDIR=/var/tmp
   - --filesystem=xdg-documents
-  - --filesystem=xdg-download
-  - --filesystem=xdg-pictures
-  - --filesystem=xdg-videos
-  - --filesystem=/run/media
-  - --filesystem=/media
   - --env=QT_PLUGIN_PATH=/app/lib/qt/plugins:/app/extra/wps-office/office6/qt/plugins
 add-extensions:
   com.wps.Office.spellcheck:
