@@ -2,7 +2,7 @@
 <component type="desktop-application">
   <id>com.wps.Office</id>
   <metadata_license>CC0-1.0</metadata_license>
-  <project_license>LicenseRef-proprietary=http://wps-community.org/license.md</project_license>
+  <project_license>LicenseRef-proprietary=https://www.wps.com/eula/</project_license>
   <name>WPS Office</name>
   <summary>WPS Office Suite</summary>
   <description>
