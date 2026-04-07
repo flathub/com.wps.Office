@@ -14,17 +14,18 @@
     It can easily open and read the documents created with Microsoft Office.</p>
   </description>
   <icon type="remote">https://www.wps.com/_content/images/about/logo.png</icon>
-  <url type="homepage">https://www.wps.com/linux</url>
-  <url type="bugtracker">http://community.wps.cn/bug/login_page.php</url>
-  <url type="help">http://community.wps.cn/wiki</url>
-  <url type="translate">https://github.com/wps-community/wps_i18n</url>
-  <developer_name>Kingsoft Office Corporation</developer_name>
+  <url type="homepage">https://www.wps.com</url>
+  <url type="help">https://help.wps.com</url>
+  <developer id="com.wps">
+    <name>Kingsoft Office Corporation</name>
+  </developer>
   <update_contact>wps_linux_at_kingsoft.com</update_contact>
   ​<launchable type="desktop-id">com.wps.Office.desktop</launchable>
   <categories>
     <category>Office</category>
   </categories>
   <releases>
+    <release version="11.1.0.11723" date="2024-02-22"/>
     <release version="11.1.0.11719" date="2024-02-21"/>
     <release version="11.1.0.11698" date="2023-04-28"/>
     <release version="11.1.0.11691" date="2023-02-02"/>
