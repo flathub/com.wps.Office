@@ -8,7 +8,7 @@ This is a set of files to help you create a spellcheck dictionary extension.
    * `dict_summary` - short description of the extension in corresponding language, e.g. translated "Spellcheck dictionary for English language"
    * `dict_license` - licence of the dictionary, or `LicenseRef-proprietary` if unsure or no license provided
    
-   Dictionaries can be downloaded from http://wps-community.org/download/dicts
+   Dictionaries can be downloaded from (no longer available)
 2. Run `make all` in this directory. It is expected to produce manifest and appdata, i.e.
    * `com.wps.Office.spellcheck.your_LANG.yml`
    * `com.wps.Office.spellcheck.your_LANG.metainfo.xml`
